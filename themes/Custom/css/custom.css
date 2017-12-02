@@ -17,7 +17,37 @@
 body{
   background-color: #000 !important;
 }
-*/
+
+.container.space-layout-container,
+.container.profile-layout-container{
+  width: 100%;
+}*/
+
+#topbar-first .user-title{
+    margin-top:16px;
+}
+#topbar-first .user-title > strong {
+    max-width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    font-weight: 400;
+}
+
+#topbar-first ul.dropdown-menu.pull-right {
+    border-radius: 0;
+    margin-top: -1px;
+    background-color: #666;
+}
+
+#topbar-first .nav>.account .dropdown-toggle{
+  padding: 0 !important;
+}
+body.guest .panel-profile-controls .statistics > a{
+  pointer-events: none;
+  cursor: default;
+}
 
 body.min{
   padding-top: 0;
@@ -310,9 +340,47 @@ body.user .fixed-2col.active.right-view .right-col{
   display: none;
 }
 
+/* space title */
+.space-title{
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  font-variant: all-small-caps;
+  display: inline-block;
+  padding: 10px;
+  background-color: #222;
+  top: 100px;
+  left: 0;
+  position: fixed;
+  z-index: 1000;
+}
+body.full .all-posts .layout-content-container {
+    margin-top: 50px;
+}
+body.min .all-posts .layout-content-container {
+    margin-top: 20px;
+}
+body.admin .space-title,
+body.guest .space-title{
+  width: calc(100% - 200px);
+}
+body.user .space-title{
+  left: 50px;
+  width: calc(100% - 250px);
+}
+
 /* All media queries */
 @media only screen and (max-width: 768px)
 {
+  body.user .space-title{
+    width: calc(100% - 150px);
+  }
+
+  body.admin .space-title,
+  body.guest .space-title{
+    width: calc(100% - 100px);
+  }
   body.full .with-right-panel .all-posts{
     margin-right: 100px;
     width: calc(100% - 100px);

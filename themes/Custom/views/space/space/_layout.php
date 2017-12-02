@@ -8,29 +8,29 @@ $space = $this->context->contentContainer;
 $onlyPost = isset($_GET['min']);
 ?>
 <div class="container space-layout-container">
+  <div class="with-right-panel">
+
+    <div class="all-posts">
+
+        <?php if(!$onlyPost){ ?>
+          <div class="space-title"><?php echo $space->name; ?></div>
+        <?php } ?>
+        <div class="space-content">
+          <div class="layout-content-container">
+              <?= \humhub\modules\space\widgets\SpaceContent::widget([
+                  'contentContainer' => $space,
+                  'content' => $content
+              ]) ?>
+          </div>
+        </div>
+
+    </div>
 
     <?php if(!$onlyPost){ ?>
-    <div class="row">
-        <div class="col-md-12">
-            <?php echo humhub\modules\space\widgets\Header::widget(['space' => $space]); ?>
-        </div>
+    <div class="ads-content">
+      <iframe src="http://localhost/humhub/p/right-panel-ads?min"></iframe>
     </div>
     <?php } ?>
-    <div class="row space-content">
-        <?php if (isset($this->context->hideSidebar) && $this->context->hideSidebar) : ?>
-            <div class="col-md-12 layout-content-container">
-                <?= \humhub\modules\space\widgets\SpaceContent::widget([
-                    'contentContainer' => $space,
-                    'content' => $content
-                ]) ?>
-            </div>
-        <?php else: ?>
-            <div class="col-md-12 layout-content-container">
-                <?= \humhub\modules\space\widgets\SpaceContent::widget([
-                    'contentContainer' => $space,
-                    'content' => $content
-                ]) ?>
-            </div>
-        <?php endif; ?>
-    </div>
+
+  </div>
 </div>

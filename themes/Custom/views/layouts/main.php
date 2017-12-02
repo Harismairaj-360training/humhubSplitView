@@ -26,6 +26,10 @@ elseif(!$isAdmin)
 {
   $bodyCSS .= ' user';
 }
+elseif($isAdmin)
+{
+  $bodyCSS .= ' admin';
+}
 
 ?>
 <?php $this->beginPage() ?>
