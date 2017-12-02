@@ -87,6 +87,19 @@ use humhub\modules\content\widgets\WallEntryLabels;
                   </div>
               </div>
               <hr/>
+            <?php }else{ ?>
+
+              <div class="media-body">
+                  <div class="media-subheading">
+                      <?= TimeAgo::widget(['timestamp' => $createdAt]); ?>
+                      <?php if ($updatedAt !== null) : ?>
+                          &middot;
+                          <span class="tt" title="<?= Yii::$app->formatter->asDateTime($updatedAt); ?>"><?= Yii::t('ContentModule.base', 'Updated'); ?></span>
+                      <?php endif; ?>
+                  </div>
+              </div>
+              <hr/>
+
             <?php } ?>
 
             <div class="content" id="wall_content_<?= $object->getUniqueId(); ?>">
