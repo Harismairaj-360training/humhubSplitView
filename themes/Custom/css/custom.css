@@ -1,4 +1,4 @@
-/*body::after {
+body::after {
     content: "";
     background-image: url('../img/bg.jpg');
     background-repeat: no-repeat;
@@ -10,11 +10,10 @@
     right: 0;
     bottom: 0;
     z-index: -1;
-    opacity: 0.4;
     background-color: #000;
 }
 
-body{
+/*body{
   background-color: #000 !important;
 }
 
@@ -23,6 +22,28 @@ body{
   width: 100%;
 }*/
 
+a.btn.btn-comment-submit {
+    background-color: #222 !important;
+    color: #fff !important;
+}
+
+.panel-profile .panel-profile-header .profile-user-photo-container {
+    bottom: -36px !important;
+}
+.panel-profile .panel-profile-header .profile-user-photo-container .profile-user-photo,
+.panel-profile .panel-profile-header {
+    border: none !important;
+}
+.nav-pills .dropdown-menu li a,
+.nav-tabs .dropdown-menu li a,
+.account .dropdown-menu li a {
+    padding:10px !important;
+}
+.nav-pills .dropdown-menu li.divider,
+.nav-tabs .dropdown-menu li.divider,
+.account .dropdown-menu li.divider{
+  background-color: #666 !important;
+}
 #topbar-first .user-title{
     margin-top:16px;
 }
@@ -38,7 +59,7 @@ body{
 #topbar-first ul.dropdown-menu.pull-right {
     border-radius: 0;
     margin-top: -1px;
-    background-color: #666;
+    background-color: #222;
 }
 
 #topbar-first .nav>.account .dropdown-toggle{
@@ -119,10 +140,8 @@ body.user div#topbar-second {
   font-weight: 600;
   text-transform: uppercase;
 }
-body.user.full #layout-content .container {
+body.user.full #layout-content {
   margin-left: 50px;
-  margin-right: 0;
-  width: calc(100% - 50px);
 }
 #top-left-nav .nav.items .item{
     display: inline-block;
@@ -151,7 +170,11 @@ body.user.full #layout-content .container {
     background-color: #0B3956;
 }
 
-body.full .with-right-panel .all-posts{
+/*body.full .with-right-panel .all-posts{
+  margin-right: 200px;
+  width: calc(100% - 200px);
+}*/
+body.full .with-right-panel .ads-content+.all-posts{
   margin-right: 200px;
   width: calc(100% - 200px);
 }
@@ -159,16 +182,26 @@ body.full .with-right-panel .all-posts{
 body.full .with-right-panel .ads-content{
   position: fixed;
   right: 0;
-  width: 200px;
+  width: 180px;
   top: 100px;
   bottom: 0;
-  background-color: #fff;
   z-index: 1;
+}
+body.full .with-right-panel .ads-content::after{
+  content: "";
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
 }
 body.full .with-right-panel .ads-content > iframe{
   width: 100%;
   border: none;
-  height: 74vh;
+  height: 80vh;
 }
 
 body.full #topbar-first .container,
@@ -180,11 +213,10 @@ body.full #topbar-second .container{
 
 
 /* 2col toggle functionality */
-
 .fixed-2col iframe{
   width: 100%;
   border: none;
-  height: 76vh;
+  height: 80vh;
 }
 
 .fixed-2col .left-col{
@@ -263,22 +295,83 @@ body.user .fixed-2col.active.right-view .right-col{
   width: 100%;
   display: inline-block;
   padding: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
+.fixed-2col.both-view a.half-toggle::before{
+  content: "\f065";
+  position: absolute;
+  right: 10px;
+  font: normal normal normal 14px/1 FontAwesome;
+  top: 18px;
+  opacity: 0.6;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.fixed-2col.left-view a.half-toggle::before,
+.fixed-2col.right-view a.half-toggle::before{
+  content: "\f066";
+  position: absolute;
+  right: 10px;
+  font: normal normal normal 14px/1 FontAwesome;
+  top: 18px;
+  opacity: 0.6;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.fixed-2col .left-col a.full-toggle::before{
+  content: "\f0ec";
+  position: absolute;
+  right: 2%;
+  font: normal normal normal 14px/1 FontAwesome;
+  top: 18px;
+  opacity: 0.6;
+  font-size: 10px;
+}
+.fixed-2col .right-col a.full-toggle::before{
+  content: "\f0ec";
+  position: absolute;
+  left: 2%;
+  font: normal normal normal 14px/1 FontAwesome;
+  top: 18px;
+  opacity: 0.6;
+  font-size: 10px;
+}
+
 .fixed-2col .left-col a.half-toggle{
-  background-color: #00cc00;
-  border-right: 1px solid #fff;
+  border-bottom: 1px solid #00cc00;
+  margin-right: 1px;
 }
 .fixed-2col .right-col a.half-toggle{
-  background-color: #ff9900;
-  border-left: 1px solid #fff;
+  border-bottom: 1px solid #ff9900;
+  margin-left: 1px;
 }
 
 .fixed-2col .left-col a.half-toggle::after{
-  border-bottom: 2px solid #00cc00;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #00cc00;
+  z-index: -1;
+  opacity: 0.8;
 }
 
 .fixed-2col .right-col a.half-toggle::after{
-  border-bottom: 2px solid #ff9900;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ff9900;
+  z-index: -1;
+  opacity: 0.8;
 }
 
 .fixed-2col.active a.full-toggle{
@@ -311,26 +404,26 @@ body.user .fixed-2col.active.right-view .right-col{
 .fixed-2col.right-view .left-col a.full-toggle::after{
   content: "Pakistan";
   position: absolute;
-  top: 10px;
+  top: 50px;
   right: 2%;
   bottom: 0;
   width: 10px;
   word-wrap: break-word;
   text-align: center;
   font-variant: all-small-caps;
-  line-height: 15px;
+  line-height: 20px;
 }
 .fixed-2col.left-view .right-col a.full-toggle::after{
   content: "India";
   position: absolute;
-  top: 10px;
+  top: 50px;
   left: 2%;
   bottom: 0;
   width: 10px;
   word-wrap: break-word;
   text-align: center;
   font-variant: all-small-caps;
-  line-height: 15px;
+  line-height: 20px;
 }
 
 .fixed-2col.active.left-view .right-col .half-toggle,
@@ -349,12 +442,16 @@ body.user .fixed-2col.active.right-view .right-col{
   font-variant: all-small-caps;
   display: inline-block;
   padding: 10px;
-  background-color: #222;
   top: 100px;
   left: 0;
   position: fixed;
   z-index: 1000;
+  background-color: #222;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
+
 body.full .all-posts .layout-content-container {
     margin-top: 50px;
 }
@@ -363,29 +460,108 @@ body.min .all-posts .layout-content-container {
 }
 body.admin .space-title,
 body.guest .space-title{
-  width: calc(100% - 200px);
+  width: calc(100% - 180px);
 }
 body.user .space-title{
   left: 50px;
-  width: calc(100% - 250px);
+  width: calc(100% - 230px);
+}
+
+.comment-container {
+    margin: 10px -10px;
+}
+body.min .comment-container .comment-message{
+  pointer-events: none;
+  cursor: default;
+}
+
+.nav-tabs{
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+/* overwrite atwho */
+body.min div.atwho-view{
+  position: fixed;
+  top: -18px !important;
+  left: 0 !important;
+  display: none;
+  background: #fff;
+  color: #555;
+  font-size: 14px;
+  z-index: 11110!important;
+  padding: 5px 0;
+  right: 0 !important;
+  background-color: #222;
+  min-width: 100%;
+  max-width: 100%;
+  border: none;
+  border-radius: 0;
+}
+body.full div.atwho-view{
+  position: fixed;
+  top: 80px !important;
+  left: 0 !important;
+  display: none;
+  background: #fff;
+  color: #555;
+  font-size: 14px;
+  z-index: 11110!important;
+  padding: 5px 0;
+  right: 0 !important;
+  background-color: #222;
+  min-width: 100%;
+  max-width: 100%;
+  border: none;
+  border-radius: 0;
+}
+div.atwho-view ul li.hint{
+  text-align: center;
+}
+div.atwho-view ul li.hint::after{
+  content: "";
+  background-image: url('../img/three-dots.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  position: relative;
+  padding: 30px;
+  margin-left: 10px;
+}
+div.atwho-view .cur,
+div.atwho-view ul li,
+div.atwho-view ul li.hint{
+  background: none !important;
+  color: #fff;
+}
+
+div.atwho-view strong,
+div.atwho-view .cur strong{
+  background-color: #55acee;
 }
 
 /* All media queries */
 @media only screen and (max-width: 768px)
 {
   body.user .space-title{
-    width: calc(100% - 150px);
+    width: calc(100% - 50px);
   }
 
   body.admin .space-title,
   body.guest .space-title{
-    width: calc(100% - 100px);
+    width: 100%;
   }
   body.full .with-right-panel .all-posts{
-    margin-right: 100px;
-    width: calc(100% - 100px);
+    margin-right: 100px !important;
+    width: 100% !important;
   }
   body.full .with-right-panel .ads-content{
-    width: 100px;
+    width: 100%;
+    top:90%;
+  }
+  .label.space-label{
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

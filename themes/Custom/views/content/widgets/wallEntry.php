@@ -8,15 +8,26 @@ use humhub\modules\content\widgets\WallEntryControls;
 use humhub\modules\space\widgets\Image as SpaceImage;
 use humhub\modules\content\widgets\WallEntryAddons;
 use humhub\modules\content\widgets\WallEntryLabels;
+use \yii\helpers\Url;
 
 /* @var $object \humhub\modules\content\components\ContentContainerActiveRecord */
 /* @var $renderControls boolean */
 /* @var $wallEntryWidget string */
 /* @var $user \humhub\modules\user\models\User */
 /* @var $showContentContainer \humhub\modules\user\models\User */
+$isMin = false;
+if(strpos($_SERVER['HTTP_REFERER'], 'min=true') !== false)
+{
+  $isMin = true;
+}
+
+$isReadOnly = false;
+if(strpos($_SERVER['HTTP_REFERER'], 'contentId=') !== false)
+{
+  $isReadOnly = true;
+}
+
 ?>
-
-
 
 <div class="panel panel-default wall_<?= $object->getUniqueId(); ?>">
     <div class="panel-body">
@@ -90,6 +101,22 @@ use humhub\modules\content\widgets\WallEntryLabels;
             <?php }else{ ?>
 
               <div class="media-body">
+                <?php if(!$isReadOnly){ ?>
+                  <div class="media-heading">
+                    <div class="pull-right">
+                      <?php
+                        $postURL = '/s/'.$object->content->container->url.'/?contentId='.$object->content->id;
+                        $spaceURL = '/s/'.$object->content->container->url;
+                      ?>
+                      <a title="<?php echo $object->content->container->name; ?>" <?php echo ($isMin?'target="_blank"':''); ?> style="background-color:<?php echo $object->content->container->color;?> !important" class="label space-label" href="<?= Url::toRoute($spaceURL);?>"><?php echo $object->content->container->name; ?></a>
+                      <a target="_blank" title="Read Only" href="<?= Url::toRoute($postURL);?>">
+                        <span class="viaLink">
+                            <i class="fa fa-window-maximize"></i>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                  <?php } ?>
                   <div class="media-subheading">
                       <?= TimeAgo::widget(['timestamp' => $createdAt]); ?>
                       <?php if ($updatedAt !== null) : ?>

@@ -46,7 +46,15 @@ $isAdmin = Yii::$app->user->isAdmin();
     <?php endif; ?>
     <?= UserImage::widget(['user' => $user, 'width' => 40, 'htmlOptions' => ['class' => 'pull-left']]); ?>
     <div>
-
+        <div class="media-body">
+            <h4 class="media-heading"><span><?php echo $user->profile->firstname.' '.$user->profile->lastname;; ?></span>
+                <small><?= TimeAgo::widget(['timestamp' => $createdAt]); ?>
+                    <?php if ($updatedAt !== null): ?>
+                        &middot; <span class="tt" title="<?= Yii::$app->formatter->asDateTime($updatedAt); ?>"><?= Yii::t('ContentModule.base', 'Updated'); ?></span>
+                    <?php endif; ?>
+                </small>
+            </h4>
+        </div>
         <!-- class comment_edit_content required since v1.2 -->
         <div class="content comment_edit_content" id="comment_editarea_<?= $comment->id; ?>">
             <div id="comment-message-<?= $comment->id; ?>" class="comment-message" data-ui-markdown data-ui-show-more data-read-more-text="<?= Yii::t('CommentModule.widgets_views_showComment', 'Read full comment...') ?>">
@@ -54,15 +62,7 @@ $isAdmin = Yii::$app->user->isAdmin();
             </div>
             <?= ShowFiles::widget(['object' => $comment]); ?>
         </div>
-        <div class="media-body">
-            <h4 class="media-heading">
-                <small class="comment-time-stamp"><?= TimeAgo::widget(['timestamp' => $createdAt]); ?>
-                    <?php if ($updatedAt !== null): ?>
-                        &middot; <span class="tt" title="<?= Yii::$app->formatter->asDateTime($updatedAt); ?>"><?= Yii::t('ContentModule.base', 'Updated'); ?></span>
-                    <?php endif; ?>
-                </small>
-            </h4>
-        </div>
+
         <div class="wall-entry-controls">
             <?= LikeLink::widget(['object' => $comment]); ?>
         </div>

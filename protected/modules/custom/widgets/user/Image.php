@@ -83,7 +83,7 @@ class Image extends Widget
      */
     public function run()
     {
-        Html::addCssClass($this->imageOptions, 'img-rounded');
+        Html::addCssClass($this->imageOptions, 'img-circle');
         Html::addCssStyle($this->imageOptions, 'width: ' . $this->width . 'px; height: ' . $this->height . 'px');
 
         if ($this->showTooltip) {

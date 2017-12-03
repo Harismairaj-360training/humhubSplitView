@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 ?>
 <?php foreach ($this->context->getItems() as $item) : ?>
-    <?php if($item['label'] != 'Dashboard' && $item['label'] != 'Directory'){ ?>
+    <?php if($item['label'] != 'Dashboard' && $item['label'] != 'Directory' && $item['label'] != 'Messages'){ ?>
         <li class="visible-md visible-lg <?php if ($item['isActive']): ?>active<?php endif; ?> <?php
         if (isset($item['id'])) {
             echo $item['id'];
@@ -23,7 +23,7 @@ use yii\helpers\Html;
     <ul class="dropdown-menu">
 
         <?php foreach ($this->context->getItems() as $item) : ?>
-            <?php if($item['label'] != 'Dashboard' && $item['label'] != 'Directory'){ ?>
+            <?php if($item['label'] != 'Dashboard' && $item['label'] != 'Directory' && $item['label'] != 'Messages'){ ?>
               <li class="<?php if ($item['isActive']): ?>active<?php endif; ?>">
                   <?php echo Html::a($item['label'], $item['url'], $item['htmlOptions']); ?>
               </li>
