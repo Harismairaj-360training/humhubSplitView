@@ -11,10 +11,13 @@ use \yii\helpers\Url;
 /** @var \humhub\modules\user\models\User $userModel */
 $userModel = Yii::$app->user->getIdentity();
 ?>
+
+<a href="<?= Url::toRoute('/dashboard'); ?>" class="btn btn-custom" title="Go to Home Page"><span class="fa fa-home"></span> <small>Home</small></a>
+
 <?php if ($userModel === null): ?>
     <a href="#" class="btn btn-enter" data-action-click="ui.modal.load" data-action-url="<?= Url::toRoute('/user/auth/login'); ?>">
         <?php if (Yii::$app->getModule('user')->settings->get('auth.anonymousRegistration')): ?>
-            <?= Yii::t('UserModule.base', 'Sign in / up'); ?>
+            <?= Yii::t('UserModule.base', 'Join or Login'); ?>
         <?php else: ?>
             <?= Yii::t('UserModule.base', 'Sign in'); ?>
         <?php endif; ?>

@@ -22,6 +22,33 @@ body::after {
   width: 100%;
 }*/
 
+body.guest .modal-dialog {
+    width: 90% !important;
+}
+
+body.guest .modal-content {
+    min-height: 90vh;
+}
+
+body.guest .modal-body .tab-content{
+    max-width: 500px;
+    margin: auto;
+}
+
+a.navbar-brand::after {
+  content: "Two Nations Many News Infinite Views";
+  color: #d7d7d7;
+  font-size: 11px;
+  position: absolute;
+  top: 8px;
+  z-index: 0;
+  width: 100px;
+  line-height: 1.1em;
+  margin-left: 136px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 a.btn.btn-comment-submit {
     background-color: #222 !important;
     color: #fff !important;
@@ -62,6 +89,9 @@ a.btn.btn-comment-submit {
     background-color: #222;
 }
 
+#topbar-first .nav>.account{
+  margin-right: -15px;
+}
 #topbar-first .nav>.account .dropdown-toggle{
   padding: 0 !important;
 }
@@ -105,9 +135,10 @@ body.min.guest .likeLinkContainer{
   border-top: 1px solid #fff !important;
 }
 
+/*
 body.user div#topbar-second {
     padding-left: 50px;
-}
+}*/
 
 #topbar-second .nav>li.active{
     background-color: #fff !important;
@@ -140,6 +171,8 @@ body.user div#topbar-second {
   font-weight: 600;
   text-transform: uppercase;
 }
+
+body.admin.full #layout-content,
 body.user.full #layout-content {
   margin-left: 50px;
 }
@@ -201,7 +234,7 @@ body.full .with-right-panel .ads-content::after{
 body.full .with-right-panel .ads-content > iframe{
   width: 100%;
   border: none;
-  height: 80vh;
+  height: 100%;
 }
 
 body.full #topbar-first .container,
@@ -239,18 +272,24 @@ body.full #topbar-second .container{
   right: -50%;
 }
 
+body.admin .fixed-2col.active.both-view .left-col,
 body.user .fixed-2col.active.both-view .left-col{
   left: 50px;
   width: calc(50% - 50px);
 }
+
+body.admin .fixed-2col.active.left-view .left-col,
 body.user .fixed-2col.active.left-view .left-col{
   left: 50px;
   width: calc(95% - 50px) !important;
 }
+
+body.admin .fixed-2col.active.right-view .left-col,
 body.user .fixed-2col.active.right-view .left-col{
   left: calc(-45% + 50px) !important;
 }
 
+body.admin .fixed-2col.active.right-view .right-col,
 body.user .fixed-2col.active.right-view .right-col{
   width: calc(95% - 50px) !important;
 }
@@ -285,6 +324,20 @@ body.user .fixed-2col.active.right-view .right-col{
   width: 50%;
 }
 
+#topbar-first .btn-custom{
+  height: 50px;
+  position: relative;
+  float: right;
+  background-color: #fff;
+  color: #000;
+  right: -25px;
+}
+#topbar-first .btn-custom small{
+  display: block;
+}
+#topbar-first .btn-enter{
+  margin-right: -26px;
+}
 .fixed-2col a.half-toggle{
   text-align: center;
   color: #fff;
@@ -458,10 +511,12 @@ body.full .all-posts .layout-content-container {
 body.min .all-posts .layout-content-container {
     margin-top: 20px;
 }
-body.admin .space-title,
+
 body.guest .space-title{
   width: calc(100% - 180px);
 }
+
+body.admin .space-title,
 body.user .space-title{
   left: 50px;
   width: calc(100% - 230px);
@@ -543,11 +598,14 @@ div.atwho-view .cur strong{
 /* All media queries */
 @media only screen and (max-width: 768px)
 {
+  #topbar-first .btn-custom{
+    right: -15px;
+  }
+  body.admin .space-title,
   body.user .space-title{
     width: calc(100% - 50px);
   }
 
-  body.admin .space-title,
   body.guest .space-title{
     width: 100%;
   }
@@ -564,4 +622,10 @@ div.atwho-view .cur strong{
     overflow: hidden;
     text-overflow: ellipsis;
   }
+}
+
+
+/* For Advertisments */
+.container.advertisments {
+    word-wrap: break-word;
 }

@@ -14,7 +14,7 @@ $onlyPost = isset($_GET['min']);
 
     <?php if(!$onlyPost){ ?>
     <div class="ads-content">
-      <iframe src="<?= Url::toRoute('/p/right-panel-ads?min=true');?>"></iframe>
+      <iframe scrolling="no" src="<?= Url::toRoute('/p/right-panel-ads?min=true');?>"></iframe>
     </div>
     <?php } ?>
 

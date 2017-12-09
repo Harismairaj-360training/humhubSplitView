@@ -64,7 +64,7 @@ elseif($isAdmin)
           </div>
           <!-- end: first top navigation bar -->
 
-          <?php if($isCustomer && !$isAdmin){ ?>
+          <?php if($isCustomer || $isAdmin){ ?>
 
             <!-- start - custom left navigation -->
             <div id="top-left-nav">
