@@ -24,15 +24,28 @@ class ContactController extends Controller
         $request = Yii::$app->request->post()['Contact'];
 
         // the message
-        $mail = '<strong>Full Name:</strong><br>'.$request['fullname'].'<br><br>';
-        $mail .= '<strong>Email Address:</strong><br>'.$request['email'].'<br><br>';
-        $mail .= '<strong>Message:</strong><br>'.$request['message'];
+        $mail = "<html>
+                  <head>
+                  <title>HTML email</title>
+                  </head>
+                  <body>
+                    <strong>Subject:</strong><br>".$request['subject']."<br><br>
+                    <strong>Full Name:</strong><br>".$request['fullname']."<br><br>
+                    <strong>Email Address:</strong><br>".$request['email']."<br><br>
+                    <strong>Message:</strong><br>".$request['message'].
+                  "</body>
+                </html>";
 
         // use wordwrap() if lines are longer than 70 characters
         $mail = wordwrap($mail,200);
 
+        //  set headers
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        $headers .= 'From: <social@border1947.com>' . "\r\n";
+
         // send email
-        mail('haris_meraj@hotmail.com',$request['subject'],$mail);
+        mail('haris_meraj@hotmail.com','Border1947 | Contact Us form',$mail,$headers);
 
         $submit = true;
       }

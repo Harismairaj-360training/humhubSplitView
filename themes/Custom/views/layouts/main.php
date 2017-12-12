@@ -74,27 +74,27 @@ elseif($isAdmin)
                     $data = array(
                       array(
                         "label" => "Profile",
-                        "url" => "/humhub/user/account/edit",
+                        "url" => "/dir/user/account/edit",
                         "icon" => "fa-user"
                       ),
                       array(
                         "label" => "E-Mail Summaries",
-                        "url" => "/humhub/activity/user",
+                        "url" => "/dir/activity/user",
                         "icon" => "fa-envelope"
                       ),
                       array(
                         "label" => "Notifications",
-                        "url" => "/humhub/notification/user",
+                        "url" => "/dir/notification/user",
                         "icon" => "fa-bell"
                       ),
                       array(
                         "label" => "Settings",
-                        "url" => "/humhub/user/account/edit-settings",
+                        "url" => "/dir/user/account/edit-settings",
                         "icon" => "fa-wrench"
                       ),
                       array(
                         "label" => "Security",
-                        "url" => "/humhub/user/account/security",
+                        "url" => "/dir/user/account/security",
                         "icon" => "fa-lock"
                       )
                     );
