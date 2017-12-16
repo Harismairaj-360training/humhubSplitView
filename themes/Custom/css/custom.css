@@ -223,21 +223,17 @@ body.full .with-right-panel .all-posts{
   margin-bottom: 70px;
 }
 body.full .with-right-panel .ads-content+.all-posts{
-  margin-right: 200px;
-  width: calc(100% - 200px);
+  margin-right: 280px;
+  width: calc(100% - 280px);
 }
 
 body.full .with-right-panel .ads-content{
   position: fixed;
   right: 0;
-  width: 180px;
+  width: 250px;
   top: 100px;
   bottom: 0;
   z-index: 1;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
 }
 body.full .with-right-panel .ads-content::after{
   content: "";
@@ -250,11 +246,11 @@ body.full .with-right-panel .ads-content::after{
   right: 0;
   z-index: -1;
 }
-body.full .with-right-panel .ads-content > iframe{
+/*body.full .with-right-panel .ads-content > iframe{
   width: 100%;
   border: none;
   height: 100%;
-}
+}*/
 
 body.full #topbar-first .container,
 body.full #topbar-second .container{
@@ -532,13 +528,13 @@ body.min .all-posts .layout-content-container {
 }
 
 body.guest .space-title{
-  width: calc(100% - 180px);
+  width: calc(100% - 250px);
 }
 
 body.admin .space-title,
 body.user .space-title{
   left: 50px;
-  width: calc(100% - 230px);
+  width: calc(100% - 300px);
 }
 
 .comment-container {
@@ -644,11 +640,11 @@ div.atwho-view .cur strong{
 }
 
 /* For Advertisments */
-.container.advertisments {
+.right-advertisments {
     word-wrap: break-word;
 }
 
-.container.advertisments .carousel-caption::after {
+.right-advertisments .carousel-caption::after {
     content: "";
     background-color: #000;
     position: absolute;
@@ -659,7 +655,7 @@ div.atwho-view .cur strong{
     opacity: 0.8;
     z-index: -1;
 }
-.container.advertisments .carousel-caption {
+.right-advertisments .carousel-caption {
     right: 0;
     left: 0;
     padding: 10px 5px;
@@ -667,25 +663,25 @@ div.atwho-view .cur strong{
     bottom: auto;
 }
 
-.container.advertisments .carousel-caption h3{
+.right-advertisments .carousel-caption h3{
   font-size: 12px;
   margin: 0;
   font-weight: bold;
   padding-top: 10px;
 }
-.container.advertisments .carousel-caption p{
+.right-advertisments .carousel-caption p{
   font-size: 11px;
   margin: 0;
   color: #ccc;
 }
-.container.advertisments img {
+.right-advertisments img {
     margin: auto;
 }
-.container.advertisments .col-md-12 {
+.right-advertisments .col-md-12 {
     margin: 0;
     padding: 0;
 }
-.container.advertisments ol.carousel-indicators {
+.right-advertisments ol.carousel-indicators {
     width: 100%;
     margin: auto !important;
     padding: 0 !important;
@@ -694,20 +690,20 @@ div.atwho-view .cur strong{
     top: 0;
     bottom: auto;
 }
-.container.advertisments .carousel-indicators li {
+.right-advertisments .carousel-indicators li {
     border-color: #55acee;
 }
 
-.container.advertisments .carousel-indicators li.active {
+.right-advertisments .carousel-indicators li.active {
     background-color: #55acee;
 }
-.container.advertisments .item a{
+.right-advertisments .item a{
   color: #fff;
 }
-.container.advertisments a.fa-play,
-.container.advertisments a.fa-youtube-play {
+.right-advertisments a.fa-play,
+.right-advertisments a.fa-youtube-play {
     font-size: 30px;
 }
-.container.advertisments .item {
+.right-advertisments .item {
     min-height: 100px;
 }

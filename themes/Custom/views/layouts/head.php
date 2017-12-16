@@ -5,6 +5,7 @@
 <!-- start: Web App Data-->
 <link rel="manifest" href="<?= $this->theme->getBaseUrl(); ?>/ico/manifest.json">
 <meta name="application-name" content="<?= \yii\helpers\Html::encode(Yii::$app->name) ?>">
+<meta name="description" content="Border1947 is a virtual window between Pakistan and India. It provides latest news of the two nations and a platform for sharing and discussing peoples’ opinion. B1947 covers all in their news, analysis, reviews and trends whether it is entertainment, sports, business or technology."/>
 <!-- end: Web App Data-->
 
 <!-- start: Favicon and Touch Icons -->
@@ -35,3 +36,14 @@
 <!-- start: Android Fullscreen -->
 <meta name="mobile-web-app-capable" content="yes">
 <!-- end: Android Fullscreen -->
+
+
+<!-- start: Add sense -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-4878081926491519",
+    enable_page_level_ads: true
+  });
+</script>
+<!-- end: Add sense -->
