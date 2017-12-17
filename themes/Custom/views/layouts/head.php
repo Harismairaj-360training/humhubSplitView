@@ -6,6 +6,7 @@
 <link rel="manifest" href="<?= $this->theme->getBaseUrl(); ?>/ico/manifest.json">
 <meta name="application-name" content="<?= \yii\helpers\Html::encode(Yii::$app->name) ?>">
 <meta name="description" content="Border1947 is a virtual window between Pakistan and India. It provides latest news of the two nations and a platform for sharing and discussing peoples’ opinion. B1947 covers all in their news, analysis, reviews and trends whether it is entertainment, sports, business or technology."/>
+<meta name="keywords" content="Pakistan and India, Pakistan News, India News, Pakistani News, Indian News, Pakistani Blog, Indian Blog, Pak India News, Pakistan India Forum, Pakistan India Website, Pakistan Indian Competition, Pakistan India Sports, Pakistan India Technology, Pakistan India Business, Pakistan India Entertainment, Pakistan India Cricket Match, Pak India Debate, Pak India Border, Pakistan India Border, LOC">
 <!-- end: Web App Data-->
 
 <!-- start: Favicon and Touch Icons -->

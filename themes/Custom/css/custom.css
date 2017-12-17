@@ -1,3 +1,17 @@
+.footer-links{
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+  background-color: #000;
+  padding: 0 5px;
+  right: 0;
+  left: 0;
+  text-align: center;
+}
+.footer-links a{
+    color:#fff;
+    font-size:10px;
+}
 body::after {
     content: "";
     background-image: url('../img/bg.jpg');
@@ -187,7 +201,9 @@ body.user div#topbar-second {
   font-weight: 600;
   text-transform: uppercase;
 }
-
+div#layout-content {
+    margin-bottom: 30px;
+}
 body.admin.full #layout-content,
 body.user.full #layout-content {
   margin-left: 50px;
@@ -232,8 +248,9 @@ body.full .with-right-panel .ads-content{
   right: 0;
   width: 250px;
   top: 100px;
-  bottom: 0;
+  bottom: 20px;
   z-index: 1;
+  overflow: hidden;
 }
 body.full .with-right-panel .ads-content::after{
   content: "";
@@ -630,7 +647,7 @@ div.atwho-view .cur strong{
   }
   body.full .with-right-panel .ads-content{
     width: 100%;
-    top:90%;
+    top: 88%;
   }
   .label.space-label{
     max-width: 80px;

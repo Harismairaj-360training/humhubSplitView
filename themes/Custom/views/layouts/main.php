@@ -141,6 +141,8 @@ elseif($isAdmin)
         <?= $content; ?>
 
         <?php $this->endBody() ?>
+
+        <div class="footer-links"><small>Border1947 © 2017 | </small><a href="/dir/p/privacy-policy">Privacy Policy</a></div>
     </body>
 </html>
 <?php $this->endPage() ?>
