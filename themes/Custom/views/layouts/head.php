@@ -36,14 +36,3 @@
 <!-- start: Android Fullscreen -->
 <meta name="mobile-web-app-capable" content="yes">
 <!-- end: Android Fullscreen -->
-
-
-<!-- start: Add sense -->
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-4878081926491519",
-    enable_page_level_ads: true
-  });
-</script>
-<!-- end: Add sense -->
