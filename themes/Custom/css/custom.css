@@ -1,3 +1,6 @@
+#blueimp-gallery > h3.title {
+    display: none;
+}
 .footer-links{
   position: fixed;
   bottom: 0;
