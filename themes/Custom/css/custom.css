@@ -7,6 +7,8 @@
   right: 0;
   left: 0;
   text-align: center;
+  font-size: 12px;
+  font-family: sans-serif;
 }
 .footer-links a{
     color:#fff;
@@ -248,7 +250,7 @@ body.full .with-right-panel .ads-content{
   right: 0;
   width: 250px;
   top: 100px;
-  bottom: 20px;
+  bottom: 17px;
   z-index: 1;
   overflow: hidden;
 }
@@ -281,7 +283,8 @@ body.full #topbar-second .container{
 .fixed-2col iframe{
   width: 100%;
   border: none;
-  height: 80vh;
+  height: 75vh;
+  margin-top: -5px;
 }
 
 .fixed-2col .left-col{
@@ -647,7 +650,10 @@ div.atwho-view .cur strong{
   }
   body.full .with-right-panel .ads-content{
     width: 100%;
-    top: 88%;
+    top: auto;
+    height: 80px;
+    bottom: 17px;
+    border-bottom: 2px solid #55acee;
   }
   .label.space-label{
     max-width: 80px;

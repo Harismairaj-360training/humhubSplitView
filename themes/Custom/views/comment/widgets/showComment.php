@@ -48,7 +48,7 @@ $isAdmin = Yii::$app->user->isAdmin();
     <div>
         <div class="media-body">
             <h4 class="media-heading"><span><?php echo $user->profile->firstname.' '.$user->profile->lastname;; ?></span>
-                <small><?= TimeAgo::widget(['timestamp' => $createdAt]); ?>
+                <small><?= Yii::$app->formatter->asDateTime($createdAt);//TimeAgo::widget(['timestamp' => $createdAt]); ?>
                     <?php if ($updatedAt !== null): ?>
                         &middot; <span class="tt" title="<?= Yii::$app->formatter->asDateTime($updatedAt); ?>"><?= Yii::t('ContentModule.base', 'Updated'); ?></span>
                     <?php endif; ?>

@@ -97,7 +97,7 @@ if($canDisplay)
                           </div>
                       </div>
                       <div class="media-subheading">
-                          <?= TimeAgo::widget(['timestamp' => $createdAt]); ?>
+                          <?= Yii::$app->formatter->asDateTime($createdAt);//TimeAgo::widget(['timestamp' => $createdAt]); ?>
                           <?php if ($updatedAt !== null) : ?>
                               &middot;
                               <span class="tt" title="<?= Yii::$app->formatter->asDateTime($updatedAt); ?>"><?= Yii::t('ContentModule.base', 'Updated'); ?></span>
@@ -126,7 +126,7 @@ if($canDisplay)
                       </div>
                       <?php } ?>
                       <div class="media-subheading">
-                          <?= TimeAgo::widget(['timestamp' => $createdAt]); ?>
+                          <?= Yii::$app->formatter->asDateTime($createdAt);//TimeAgo::widget(['timestamp' => $createdAt]); ?>
                           <?php if ($updatedAt !== null) : ?>
                               &middot;
                               <span class="tt" title="<?= Yii::$app->formatter->asDateTime($updatedAt); ?>"><?= Yii::t('ContentModule.base', 'Updated'); ?></span>
