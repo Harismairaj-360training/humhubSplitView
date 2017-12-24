@@ -1,3 +1,6 @@
+body.user .fileinput-button.tt{
+  display: none;
+}
 #blueimp-gallery > h3.title {
     display: none;
 }
@@ -663,9 +666,9 @@ div.atwho-view .cur strong{
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  
+
   .right-advertisments .desktop{
-	display:none;  
+	display:none;
   }
   .right-advertisments .mobile{
 	display:block !important;
