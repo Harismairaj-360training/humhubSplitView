@@ -42,10 +42,10 @@ class ContactController extends Controller
         //  set headers
         $headers = "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-        $headers .= 'From: <social@border1947.com>' . "\r\n";
+        $headers .= 'From: <'.$request['email'].'>' . "\r\n";
 
         // send email
-        mail('haris_meraj@hotmail.com','Border1947 | Contact Us form',$mail,$headers);
+        mail('info@border1947.com','Border1947 | Contact Us form',$mail,$headers);
 
         $submit = true;
       }

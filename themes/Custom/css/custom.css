@@ -663,9 +663,20 @@ div.atwho-view .cur strong{
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  
+  .right-advertisments .desktop{
+	display:none;  
+  }
+  .right-advertisments .mobile{
+	display:block !important;
+  }
 }
 
 /* For Advertisments */
+.right-advertisments .mobile{
+	display:none;
+}
+
 .right-advertisments {
     word-wrap: break-word;
 }
