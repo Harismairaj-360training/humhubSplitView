@@ -143,7 +143,7 @@ elseif($isAdmin)
         <?php $this->endBody() ?>
 
         <?php if(!$onlyPost){ ?>
-        <div class="footer-links"><small>Border1947 © 2017 | </small><a href="/dir/p/privacy-policy">Privacy Policy</a></div>
+        <div class="footer-links"><small>Border1947 © 2017 | </small><a href="/dir/p/policies">Privacy and Posting Policies</a> | <a href="/dir/p/disclaimer">Disclaimer</a></div>
         <?php } ?>
     </body>
 </html>
