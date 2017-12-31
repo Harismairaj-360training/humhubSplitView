@@ -74,27 +74,27 @@ elseif($isAdmin)
                     $data = array(
                       array(
                         "label" => "Profile",
-                        "url" => "/dir/user/account/edit",
+                        "url" => Url::toRoute("/user/account/edit"),
                         "icon" => "fa-user"
                       ),
                       array(
                         "label" => "E-Mail Summaries",
-                        "url" => "/dir/activity/user",
+                        "url" => Url::toRoute("/activity/user"),
                         "icon" => "fa-envelope"
                       ),
                       array(
                         "label" => "Notifications",
-                        "url" => "/dir/notification/user",
+                        "url" => Url::toRoute("/notification/user"),
                         "icon" => "fa-bell"
                       ),
                       array(
                         "label" => "Settings",
-                        "url" => "/dir/user/account/edit-settings",
+                        "url" => Url::toRoute("/user/account/edit-settings"),
                         "icon" => "fa-wrench"
                       ),
                       array(
                         "label" => "Security",
-                        "url" => "/dir/user/account/security",
+                        "url" => Url::toRoute("/user/account/security"),
                         "icon" => "fa-lock"
                       )
                     );
@@ -143,7 +143,7 @@ elseif($isAdmin)
         <?php $this->endBody() ?>
 
         <?php if(!$onlyPost){ ?>
-        <div class="footer-links"><small>Border1947 © 2017 | </small><a href="/dir/p/policies">Privacy and Posting Policies</a> | <a href="/dir/p/disclaimer">Disclaimer</a></div>
+        <div class="footer-links"><small>Border1947 © 2018 | </small><a href="<?= Url::toRoute("/p/policies"); ?>">Privacy and Posting Policies</a> | <a href="<?= Url::toRoute("/p/disclaimer"); ?>">Disclaimer</a></div>
         <?php } ?>
     </body>
 </html>
