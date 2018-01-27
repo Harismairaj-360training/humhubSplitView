@@ -145,6 +145,11 @@ elseif($isAdmin)
         <?php if(!$onlyPost){ ?>
         <div class="footer-links"><small>Border1947 © 2018 | </small><a href="<?= Url::toRoute("/p/policies"); ?>">Privacy and Posting Policies</a> | <a href="<?= Url::toRoute("/p/disclaimer"); ?>">Disclaimer</a></div>
         <?php } ?>
+
+        <script>
+          var BASE_THEME_URL="<?php echo $this->theme->getBaseUrl(); ?>";
+          var BASE_URL="<?php echo Url::toRoute('/'); ?>";
+        </script>
     </body>
 </html>
 <?php $this->endPage() ?>

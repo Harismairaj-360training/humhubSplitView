@@ -1,3 +1,31 @@
+.html-panel .table th,
+.html-panel .table td{
+  padding: 10px;
+}
+/*.wall-entry .media > .stream-entry-addons .post-files img {
+    width: 400px;
+    height: 100%;
+    display:block;
+    margin:auto;
+}
+
+.wall-entry .media > .stream-entry-addons .post-files > a {
+    max-height: 300px;
+    overflow: hidden;
+    display: block;
+    background-color:#222;
+}*/
+
+.wall-entry .media > .content p,
+.wall-entry .media > .content a {
+    font-size: 16px;
+    font-weight: 400;
+    color: #222;
+    font-family: 'Arial',sans-serif;
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+
 body.user .fileinput-button.tt{
   display: none;
 }

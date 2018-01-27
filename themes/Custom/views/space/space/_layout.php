@@ -22,13 +22,17 @@ $onlyPost = isset($_GET['min']);
 
         <?php if(!$onlyPost){ ?>
 
-          <!-- div class="row">
+          <?php
+          if(Yii::$app->user->id == 1 || Yii::$app->user->id == SPECIAL_USER_ID)
+          { ?>
+          <div class="row">
               <div class="col-md-12">
-                  <?php //echo humhub\modules\space\widgets\Header::widget(['space' => $space]); ?>
+                  <?php echo humhub\modules\space\widgets\Header::widget(['space' => $space]); ?>
               </div>
-          </div -->
-
+          </div>
+          <?php }else{ ?>
           <div style="background-color:<?php echo $space->color; ?>" class="space-title"><?php echo $space->name; ?></div>
+          <?php } ?>
         <?php } ?>
         <div class="space-content">
           <div class="layout-content-container">
@@ -43,3 +47,7 @@ $onlyPost = isset($_GET['min']);
 
   </div>
 </div>
+
+<script>
+  var spaceGUID = "<?php echo $space->guid;?>";
+</script>

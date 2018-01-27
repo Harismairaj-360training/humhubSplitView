@@ -36,7 +36,7 @@ if(Yii::$app->user->isGuest)
 if($canDisplay)
 {
 ?>
-    <div class="panel panel-default wall_<?= $object->getUniqueId(); ?>">
+    <div class="<?php if($object->html_message){echo "html-panel ";}; ?>panel panel-default wall_<?= $object->getUniqueId(); ?>">
         <div class="panel-body">
 
             <div class="media">
@@ -97,7 +97,7 @@ if($canDisplay)
                           </div>
                       </div>
                       <div class="media-subheading">
-                          <?= Yii::$app->formatter->asDateTime($createdAt);//TimeAgo::widget(['timestamp' => $createdAt]); ?>
+                          <?= TimeAgo::widget(['timestamp' => $createdAt]); ?>
                           <?php if ($updatedAt !== null) : ?>
                               &middot;
                               <span class="tt" title="<?= Yii::$app->formatter->asDateTime($updatedAt); ?>"><?= Yii::t('ContentModule.base', 'Updated'); ?></span>
@@ -126,7 +126,7 @@ if($canDisplay)
                       </div>
                       <?php } ?>
                       <div class="media-subheading">
-                          <?= Yii::$app->formatter->asDateTime($createdAt);//TimeAgo::widget(['timestamp' => $createdAt]); ?>
+                          <?= TimeAgo::widget(['timestamp' => $createdAt]); ?>
                           <?php if ($updatedAt !== null) : ?>
                               &middot;
                               <span class="tt" title="<?= Yii::$app->formatter->asDateTime($updatedAt); ?>"><?= Yii::t('ContentModule.base', 'Updated'); ?></span>
@@ -138,7 +138,11 @@ if($canDisplay)
                 <?php } ?>
 
                 <div class="content" id="wall_content_<?= $object->getUniqueId(); ?>">
+                  <?php if($object->html_message){ ?>
+                    <?= $object->html_message; ?>
+                  <?php }else{ ?>
                     <?= $content; ?>
+                  <?php } ?>
                 </div>
 
                 <!-- wall-entry-addons class required since 1.2 -->

@@ -12,7 +12,7 @@ use Yii;
 
 /**
  * Shows a given date & time as automatically updating fuzzy timestamps (e.g. "4 minutes ago" or "about 1 day ago").
- * 
+ *
  * @author luke
  */
 class TimeAgo extends \yii\base\Widget
@@ -53,11 +53,15 @@ class TimeAgo extends \yii\base\Widget
 
     /**
      * Render TimeAgo Javascript
-     * 
+     *
      * @return string timeago span
      */
     public function renderTimeAgo()
     {
+        //  Begin - Edit By Haris because its not showing correct time ago
+        return '<span class="time"><span>' . Yii::$app->formatter->asDate($this->timestamp, 'medium') . '</span></span>';
+        //  End - Edit By Haris
+
         // Use static timeago
         if (Yii::$app->params['formatter']['timeAgoStatic']) {
             return '<span class="time"><span title="' . $this->getFullDateTime() . '">' . Yii::$app->formatter->asRelativeTime($this->timestamp) . '</span></span>';
@@ -72,12 +76,16 @@ class TimeAgo extends \yii\base\Widget
 
     /**
      * Show full date
-     * 
+     *
      * @param int $elasped time in seconds
      * @return string output of full date and time
      */
     public function renderDateTime($elapsed)
     {
+        //  Begin - Edit By Haris because its not showing correct time ago
+        return '<span class="time"><span>' . Yii::$app->formatter->asDate($this->timestamp, 'medium') . '</span></span>';
+        //  End - Edit By Haris
+
         // Show time when within specified range
         if (Yii::$app->params['formatter']['timeAgoHideTimeAfter'] === false || $elapsed <= Yii::$app->params['formatter']['timeAgoHideTimeAfter']) {
             $date = $this->getFullDateTime();
@@ -90,7 +98,7 @@ class TimeAgo extends \yii\base\Widget
 
     /**
      * Returns full date as text
-     * 
+     *
      * @return string
      */
     protected function getFullDateTime()
