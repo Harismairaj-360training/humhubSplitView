@@ -2,19 +2,37 @@
 .html-panel .table td{
   padding: 10px;
 }
-/*.wall-entry .media > .stream-entry-addons .post-files img {
-    width: 400px;
-    height: 100%;
-    display:block;
-    margin:auto;
+
+.stream-entry-addons > .hideOnEdit {
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+    background-color:#222;
+}
+
+.stream-entry-addons > .hideOnEdit > hr{
+    display:none;
+}
+
+.wall-entry .media > .stream-entry-addons .post-files{
+  display: table;
+  width: 100%;
+  margin: 0;
+}
+.comment-message + .hideOnEdit .post-files img{
+  height: 140px !important;
+  margin: 10px 0 0 !important;
+}
+.wall-entry .media > .stream-entry-addons .post-files img {
+  height: 300px;
+  display: block;
+  margin: auto;
 }
 
 .wall-entry .media > .stream-entry-addons .post-files > a {
-    max-height: 300px;
-    overflow: hidden;
-    display: block;
-    background-color:#222;
-}*/
+  display: table-cell;
+  vertical-align: middle;
+}
 
 .wall-entry .media > .content p,
 .wall-entry .media > .content a {
