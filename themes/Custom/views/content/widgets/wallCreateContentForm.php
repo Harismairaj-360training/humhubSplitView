@@ -44,7 +44,7 @@ $this->registerJsConfig('content.form', [
             <hr>
             <div class="btn_container">
                 <?php
-                if($contentContainer instanceof Space && Yii::$app->user->id == SPECIAL_USER_ID)
+                if($contentContainer instanceof Space && (Yii::$app->user->id == SPECIAL_USER_ID || Yii::$app->user->id == SPECIAL_USER_ID2))
                 {
                   //  If Space
                 ?>

@@ -13,6 +13,7 @@
 require(__DIR__ . '/protected/vendor/autoload.php');
 require(__DIR__ . '/protected/vendor/yiisoft/yii2/Yii.php');
 defined('SPECIAL_USER_ID') or define('SPECIAL_USER_ID', 6);
+defined('SPECIAL_USER_ID2') or define('SPECIAL_USER_ID2', 1);
 
 $config = yii\helpers\ArrayHelper::merge(
     require(__DIR__ . '/protected/humhub/config/common.php'),

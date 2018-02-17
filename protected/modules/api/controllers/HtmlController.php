@@ -59,13 +59,16 @@ class HtmlController extends BaseController
           throw new BadRequestHttpException('`containerClass` is required and must be humhub\modules\space\models\\');
       }
 
+      $userId = (int) SPECIAL_USER_ID;
       $canSetActivity = true;
       if(!empty(Yii::$app->user->identity->id))
       {
-        $canSetActivity = (Yii::$app->user->identity->id == SPECIAL_USER_ID);
+        $canSetActivity = (Yii::$app->user->identity->id == SPECIAL_USER_ID || Yii::$app->user->identity->id == SPECIAL_USER_ID2);
+        if(Yii::$app->user->identity->id == SPECIAL_USER_ID2)
+        {
+          $userId = (int) SPECIAL_USER_ID2;
+        }
       }
-
-      $userId = (int) SPECIAL_USER_ID;
 
       $space = \humhub\modules\space\models\Space::findOne(['guid' => $request->post()["containerGuid"]]);
       $space->addMember($userId);

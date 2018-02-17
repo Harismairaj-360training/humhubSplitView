@@ -205,13 +205,14 @@ body.min{
 body.min:after,
 body.user #space-menu,
 body.guest #space-menu,
-
 body.user #space-menu-dropdown,
 body.guest #space-menu-dropdown,
-
-body.min .wallFilterPanel,
-body.min.guest .likeLinkContainer{
+body.min .wallFilterPanel{
   display: none !important;
+  pointer-events: none;
+}
+
+body.min.guest .likeLinkContainer a{
   pointer-events: none;
 }
 

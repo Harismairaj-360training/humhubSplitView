@@ -23,7 +23,7 @@ $onlyPost = isset($_GET['min']);
         <?php if(!$onlyPost){ ?>
 
           <?php
-          if(Yii::$app->user->id == 1 || Yii::$app->user->id == SPECIAL_USER_ID)
+          if(Yii::$app->user->id == 1 || Yii::$app->user->id == SPECIAL_USER_ID || Yii::$app->user->id == SPECIAL_USER_ID2)
           { ?>
           <div class="row">
               <div class="col-md-12">
