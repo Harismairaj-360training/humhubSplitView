@@ -41,6 +41,7 @@ elseif($isAdmin)
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <?php $this->head() ?>
         <?= $this->render('head'); ?>
+        <?= \humhub\modules\custom\widgets\CustomMeta::widget(); ?>
     </head>
     <body class="<?php echo $bodyCSS; ?>">
         <?php $this->beginBody() ?>
